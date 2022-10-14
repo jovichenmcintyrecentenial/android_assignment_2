@@ -12,5 +12,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.iphone -> Toast.makeText(this,"iphone was clicked",Toast.LENGTH_LONG).show()
+            R.id.samsung -> Toast.makeText(this,"samsung was clicked",Toast.LENGTH_LONG).show()
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
 }
