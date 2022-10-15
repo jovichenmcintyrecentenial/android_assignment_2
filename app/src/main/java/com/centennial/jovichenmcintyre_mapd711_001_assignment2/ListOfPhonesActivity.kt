@@ -17,24 +17,24 @@ class ListOfPhonesActivity : AppCompatActivity() {
 
         when (company) {
             PhoneCompany.OPPO -> {
-                list.add(Phone("Oppo Reno8 Pro",756.81,"oppo-reno8-pro"))
-                list.add(Phone("Oppo A77s",303.38,"oppo-a77s"))
-                list.add(Phone("Oppo Reno7 5G",488.25,"oppo-reno7"))
+                list.add(Phone(getString(R.string.oppo_reno8),756.81,"oppo-reno8-pro"))
+                list.add(Phone(getString(R.string.oppo_A77s),303.38,"oppo-a77s"))
+                list.add(Phone(getString(R.string.oppo_reno7_5G),488.25,"oppo-reno7"))
             }
             PhoneCompany.GOOGLE -> {
-                list.add(Phone("Google Pixel 7 Pro",1179.99,"google-pixel7-pro-new"))
-                list.add(Phone("Google Pixel 6 Pro",900.99,"google-pixel-6-pro"))
-                list.add(Phone("Google Pixel 5 Pro",600.99,"google-pixel-5"))
+                list.add(Phone(getString(R.string.google_pixel_7_pro),1179.99,"google-pixel7-pro-new"))
+                list.add(Phone(getString(R.string.google_pixel_6_pro),900.99,"google-pixel-6-pro"))
+                list.add(Phone(getString(R.string.google_pixel_5_pro),600.99,"google-pixel-5"))
             }
             PhoneCompany.SAMSUNG -> {
-                list.add(Phone("Samsung Galaxy S22 Ultra 5G",1499.99,"samsung-galaxy-s22-ultra-5g"))
-                list.add(Phone("Samsung Galaxy A53 5G",449.99,"samsung-galaxy-a53-5g"))
-                list.add(Phone("Samsung Galaxy A13",329.99,"samsung-galaxy-a13"))
+                list.add(Phone(getString(R.string.samung_s22_ultra_5G),1499.99,"samsung-galaxy-s22-ultra-5g"))
+                list.add(Phone(getString(R.string.samung_galaxy_a53_5g),449.99,"samsung-galaxy-a53-5g"))
+                list.add(Phone(getString(R.string.samung_galaxy_a13),329.99,"samsung-galaxy-a13"))
             }
             PhoneCompany.APPLE -> {
-                list.add(Phone("iPhone 14 Pro Max",1549.99,"apple-iphone-14-pro-max"))
-                list.add(Phone("iPhone 13 Pro Max",1399.99,"apple-iphone-13-pro-max"))
-                list.add(Phone("iPhone 12 Pro Max",1029.99,"apple-iphone-12-pro-max"))
+                list.add(Phone(getString(R.string.iphone_14_pro_max),1549.99,"apple-iphone-14-pro-max"))
+                list.add(Phone(getString(R.string.iphone_13_pro_max),1399.99,"apple-iphone-13-pro-max"))
+                list.add(Phone(getString(R.string.iphone_12_pro_max),1029.99,"apple-iphone-12-pro-max"))
             }
         }
 
