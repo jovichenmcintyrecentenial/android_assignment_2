@@ -1,18 +1,16 @@
 package com.centennial.jovichenmcintyre_mapd711_001_assignment2.models
 
 class Phone(
-    company: String,
     name: String,
-    price: String,
+    price: Double,
     uri: String
 ) {
 
-    var company:String = company
     var name:String = name
-    var price:String = price
+    private var price:Double = price
     var uri:String = uri
 
-    fun getFormatterPrice():String{
+    fun getFormatterPrice():Double{
         return this.price
     }
 
