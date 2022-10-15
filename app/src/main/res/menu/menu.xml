@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="iPhone" android:orderInCategory="1" android:id="@+id/iphone"/>
+    <item android:title="iPhone" android:orderInCategory="1" android:id="@+id/apple"/>
     <item android:title="Samsung" android:orderInCategory="2" android:id="@+id/samsung"/>
-    <item android:title="Google Pixel" android:orderInCategory="3" android:id="@+id/googlepixel"/>
+    <item android:title="Google Pixel" android:orderInCategory="3" android:id="@+id/google"/>
     <item android:title="Oppo" android:orderInCategory="4" android:id="@+id/oppo"/>
 
 </menu>
