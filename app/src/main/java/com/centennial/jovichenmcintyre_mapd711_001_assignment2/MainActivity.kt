@@ -19,9 +19,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        when(item.itemId){
+        when(item.itemId) {
             R.id.iphone -> Toast.makeText(this,"iphone was clicked",Toast.LENGTH_LONG).show()
             R.id.samsung -> Toast.makeText(this,"samsung was clicked",Toast.LENGTH_LONG).show()
+            R.id.oppo -> Toast.makeText(this,"samsung was clicked",Toast.LENGTH_LONG).show()
+            R.id.googlepixel -> Toast.makeText(this,"samsung was clicked",Toast.LENGTH_LONG).show()
         }
 
         return super.onOptionsItemSelected(item)
