@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import com.centennial.jovichenmcintyre_mapd711_001_assignment2.exceptions.UserInputException
+import com.centennial.jovichenmcintyre_mapd711_001_assignment2.models.PhoneCheckOut
+import com.google.gson.Gson
 import java.time.LocalDateTime
 import java.util.*
 
@@ -43,51 +45,51 @@ class CheckOutActivity : AppCompatActivity() {
     private fun isDataValid(): Boolean {
 
         if(ccNumber.text.trim().isEmpty()){
-            throw UserInputException("Please fill out the card number field")
+            throw UserInputException(getString(R.string.empty_card_number))
         }
         else if(ccNumber.text.trim().length != 16){
-            throw UserInputException("Please enter 16 digits for card number")
+            throw UserInputException(getString(R.string.error_16_digits))
         }
         if(cvvNumber.text.trim().isEmpty()){
-            throw UserInputException("Please fill out the cvv field")
+            throw UserInputException(getString(R.string.empty_cvv))
         }
         else if(cvvNumber.text.trim().length != 3){
-            throw UserInputException("Please enter 3 digits for cvv number")
+            throw UserInputException(getString(R.string.error_3_digit_cvv))
         }
         if(expiryMonth.text.trim().isEmpty()){
-            throw UserInputException("Please fill out the expiry month field")
+            throw UserInputException(getString(R.string.empty_exp_month))
         }
         else if(expiryMonth.text.toString().toDouble() > 12){
-            throw UserInputException("There is only 12 months in a year")
+            throw UserInputException(getString(R.string.error_12_month_in_year))
         }
         if(expiryYear.text.trim().isEmpty()){
-            throw UserInputException("Please fill out the expiry year field")
+            throw UserInputException(getString(R.string.empty_exp_year))
         }
         else {
             var year = Calendar.getInstance().get(Calendar.YEAR).toString()
             year = year.substring(2,year.length)
             val yearInput = expiryYear.text.toString()
             if(yearInput.toDouble() < year.toDouble()) {
-                throw UserInputException("Please enter a valid year")
+                throw UserInputException(getString(R.string.error_invaid_year))
             }
         }
         if(fname.text.trim().isEmpty()){
-            throw UserInputException("Please fill out the firstname field")
+            throw UserInputException(getString(R.string.empty_fname))
         }
         if(lname.text.trim().isEmpty()){
-            throw UserInputException("Please fill out the lastname field")
+            throw UserInputException(getString(R.string.empty_lname))
         }
         if(phoneNumber.text.trim().isEmpty()){
-            throw UserInputException("Please fill out the phone number field")
+            throw UserInputException(getString(R.string.empty_number))
         }
         if(address.text.trim().isEmpty()){
-            throw UserInputException("Please fill out the address field")
+            throw UserInputException(getString(R.string.empty_address))
         }
         if(city.text.trim().isEmpty()){
-            throw UserInputException("Please fill out the city field")
+            throw UserInputException(getString(R.string.empty_city))
         }
         if(postalCode.text.trim().isEmpty()){
-            throw UserInputException("Please fill out the postal code field")
+            throw UserInputException(getString(R.string.empty_postal_code))
         }
 
         return true
@@ -102,7 +104,17 @@ class CheckOutActivity : AppCompatActivity() {
     fun onSubmit(view: View) {
         try{
             if(isDataValid()){
-
+                var checkoutObj = Gson().fromJson(intent.getStringExtra("checkout"),PhoneCheckOut::class.java)
+                checkoutObj.cardNumber = ccNumber.text.toString()
+                checkoutObj.cvv = cvvNumber.text.toString()
+                checkoutObj.expirationMonth = expiryMonth.text.toString()
+                checkoutObj.expirationYear = expiryYear.text.toString()
+                checkoutObj.firstName = fname.text.toString()
+                checkoutObj.lastName = lname.text.toString()
+                checkoutObj.telephone = phoneNumber.text.toString()
+                checkoutObj.address = address.text.toString()
+                checkoutObj.city = city.text.toString()
+                checkoutObj.postalCode = postalCode.text.toString()
             }
         }
         //catch  and display user input exception

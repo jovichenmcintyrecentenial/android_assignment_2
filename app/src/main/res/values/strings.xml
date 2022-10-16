@@ -21,6 +21,20 @@
     <string name="choose_color">Choose color:</string>
     <string name="choose_internal_storage">Choose internal storage:</string>
     <string name="checkout">Checkout</string>
+    <string name="empty_card_number">Please fill out the card number field</string>
+    <string name="error_16_digits">Please enter 16 digits for card number</string>
+    <string name="empty_cvv">Please fill out the cvv field</string>
+    <string name="error_3_digit_cvv">Please enter 3 digits for cvv number</string>
+    <string name="empty_exp_month">Please fill out the expiry month field</string>
+    <string name="error_12_month_in_year">There is only 12 months in a year</string>
+    <string name="empty_exp_year">Please fill out the expiry year field</string>
+    <string name="error_invaid_year">Please enter a valid year</string>
+    <string name="empty_fname">Please fill out the firstname field</string>
+    <string name="empty_lname">Please fill out the lastname field</string>
+    <string name="empty_number">Please fill out the phone number field</string>
+    <string name="empty_address">Please fill out the address field</string>
+    <string name="empty_city">Please fill out the city field</string>
+    <string name="empty_postal_code">Please fill out the postal code field</string>
     <string-array name="string_of_phone_colors">
         <item>Blue</item>
         <item>Black</item>

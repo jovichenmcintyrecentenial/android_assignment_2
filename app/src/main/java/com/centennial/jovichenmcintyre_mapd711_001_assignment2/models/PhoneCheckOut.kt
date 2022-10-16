@@ -8,11 +8,14 @@ class PhoneCheckOut (phone:Phone) {
     var cardNumber:String? = null
     var internalStorageSize:String? = null
     var cvv:String? = null
+    var firstName:String? = null
+    var lastName:String? = null
     var address:String? = null
     var city:String? = null
     var postalCode:String? = null
     var telephone:String? = null
-    var expiration : Date? = null
+    var expirationMonth : String? = null
+    var expirationYear : String? = null
     var type :String? = null
 
 }
