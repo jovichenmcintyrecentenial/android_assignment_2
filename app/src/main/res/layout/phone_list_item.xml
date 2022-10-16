@@ -23,14 +23,13 @@
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="normal"
+        android:textStyle="bold"
         android:textSize="17sp"
         android:text="Samsung Galaxy S22 Ultra 5G" />
     <TextView
         android:id="@+id/phone_price"
         android:textColor="#77C37B"
         android:layout_width="wrap_content"
-        android:textStyle="bold"
         android:textSize="17sp"
         android:layout_height="wrap_content"
         android:text="$152.25" />

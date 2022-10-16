@@ -17,22 +17,30 @@ import android.widget.TextView
 import com.centennial.jovichenmcintyre_mapd711_001_assignment2.enumerators.PhoneCompany
 import com.centennial.jovichenmcintyre_mapd711_001_assignment2.models.Phone
 import com.google.gson.Gson
-import java.util.ArrayList
+import java.util.*
 
 class ListOfPhonesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_of_phones)
-
         var company:PhoneCompany = Gson().fromJson(intent.getStringExtra("company"), PhoneCompany::class.java)
 
         var listOfPhones = getPhoneList(company)
 
+        if(listOfPhones.isNotEmpty()) {
+            supportActionBar?.title = listOfPhones[0].company
+
+            val companyImageView = findViewById<ImageView>(R.id.company_logo)
+            val resourceImage: Int = resources.getIdentifier(listOfPhones[0].company.lowercase(), "drawable", packageName)
+            companyImageView?.setImageResource(resourceImage)
+        }
         var listView = findViewById<ListView>(R.id.list)
 
         var listAdaptor = PhoneListAdaptor(this, listOfPhones)
 
         listView.adapter = listAdaptor
+
+
 
     }
 
@@ -97,8 +105,7 @@ class ListOfPhonesActivity : AppCompatActivity() {
             var phoneImage = inflatedView?.findViewById<ImageView>(R.id.phone_image)
             var phoneNameTextView = inflatedView?.findViewById<TextView>(R.id.phone_name)
 
-            val resourceImage: Int = context.resources.getIdentifier(phone.uri, "drawable", context.getPackageName())
-//            val resourceImage2: Int = context.resources.getIdentifier("google_pixel7_pro_new.jpg", "drawable", context.getPackageName())
+            val resourceImage: Int = context.resources.getIdentifier(phone.uri, "drawable", context.packageName)
             phoneImage?.setImageResource(resourceImage)
 
             phoneNameTextView?.text = phone.name
