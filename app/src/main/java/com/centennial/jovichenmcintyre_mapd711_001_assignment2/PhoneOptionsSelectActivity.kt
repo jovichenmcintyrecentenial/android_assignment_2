@@ -69,6 +69,8 @@ class PhoneOptionsSelectActivity : AppCompatActivity() {
 
     }
     fun onSubmit(view: View) {
-//        var newIntent = Intent(this, )
+        var newIntent = Intent(this,CheckOutActivity::class.java )
+        newIntent.putExtra("phone",intent.getStringExtra("phone"))
+        newIntent.putExtra("phone",intent.getStringExtra("phone"))
     }
 }
