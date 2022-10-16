@@ -83,7 +83,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onSubmit"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/bottom_margin_instruction"
+        android:layout_marginBottom="@dimen/bottom_margin_instruction"
         android:text="@string/checkout" />
 </LinearLayout>
 </ScrollView>
