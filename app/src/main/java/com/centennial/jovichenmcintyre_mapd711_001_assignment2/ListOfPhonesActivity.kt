@@ -2,12 +2,16 @@ package com.centennial.jovichenmcintyre_mapd711_001_assignment2
 
 import android.app.Activity
 import android.content.Context
+import android.content.res.Resources
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import com.centennial.jovichenmcintyre_mapd711_001_assignment2.enumerators.PhoneCompany
@@ -37,24 +41,24 @@ class ListOfPhonesActivity : AppCompatActivity() {
 
         when (company) {
             PhoneCompany.OPPO -> {
-                list.add(Phone(getString(R.string.oppo_reno8),756.81,"oppo-reno8-pro","Oppo"))
-                list.add(Phone(getString(R.string.oppo_A77s),303.38,"oppo-a77s","Oppo"))
-                list.add(Phone(getString(R.string.oppo_reno7_5G),488.25,"oppo-reno7","Oppo"))
+                list.add(Phone(getString(R.string.oppo_reno8),756.81,"oppo_reno8_pro","Oppo"))
+                list.add(Phone(getString(R.string.oppo_A77s),303.38,"oppo_a77s","Oppo"))
+                list.add(Phone(getString(R.string.oppo_reno7_5G),488.25,"oppo_reno7","Oppo"))
             }
             PhoneCompany.GOOGLE -> {
-                list.add(Phone(getString(R.string.google_pixel_7_pro),1179.99,"google-pixel7-pro-new","Google"))
-                list.add(Phone(getString(R.string.google_pixel_6_pro),900.99,"google-pixel-6-pro","Google"))
-                list.add(Phone(getString(R.string.google_pixel_5_pro),600.99,"google-pixel-5","Google"))
+                list.add(Phone(getString(R.string.google_pixel_7_pro),1179.99,"google_pixel7_pro_new","Google"))
+                list.add(Phone(getString(R.string.google_pixel_6_pro),900.99,"google_pixel_6_pro","Google"))
+                list.add(Phone(getString(R.string.google_pixel_5_pro),600.99,"google_pixel_5","Google"))
             }
             PhoneCompany.SAMSUNG -> {
-                list.add(Phone(getString(R.string.samung_s22_ultra_5G),1499.99,"samsung-galaxy-s22-ultra-5g","Samsung"))
-                list.add(Phone(getString(R.string.samung_galaxy_a53_5g),449.99,"samsung-galaxy-a53-5g","Samsung"))
-                list.add(Phone(getString(R.string.samung_galaxy_a13),329.99,"samsung-galaxy-a13","Samsung"))
+                list.add(Phone(getString(R.string.samung_s22_ultra_5G),1499.99,"samsung_galaxy_s22_ultra_5g","Samsung"))
+                list.add(Phone(getString(R.string.samung_galaxy_a53_5g),449.99,"samsung_galaxy_a53_5g","Samsung"))
+                list.add(Phone(getString(R.string.samung_galaxy_a13),329.99,"samsung_galaxy_a13","Samsung"))
             }
             PhoneCompany.APPLE -> {
-                list.add(Phone(getString(R.string.iphone_14_pro_max),1549.99,"apple-iphone-14-pro-max","Apple"))
-                list.add(Phone(getString(R.string.iphone_13_pro_max),1399.99,"apple-iphone-13-pro-max","Apple"))
-                list.add(Phone(getString(R.string.iphone_12_pro_max),1029.99,"apple-iphone-12-pro-max","Apple"))
+                list.add(Phone(getString(R.string.iphone_14_pro_max),1549.99,"apple_iphone_14_pro_max","Apple"))
+                list.add(Phone(getString(R.string.iphone_13_pro_max),1399.99,"apple_iphone_13_pro_max","Apple"))
+                list.add(Phone(getString(R.string.iphone_12_pro_max),1029.99,"apple_iphone_12_pro_max","Apple"))
             }
         }
 
@@ -90,7 +94,12 @@ class ListOfPhonesActivity : AppCompatActivity() {
             }
 
             var priceTextView = inflatedView?.findViewById<TextView>(R.id.phone_price)
+            var phoneImage = inflatedView?.findViewById<ImageView>(R.id.phone_image)
             var phoneNameTextView = inflatedView?.findViewById<TextView>(R.id.phone_name)
+
+            val resourceImage: Int = context.resources.getIdentifier(phone.uri, "drawable", context.getPackageName())
+//            val resourceImage2: Int = context.resources.getIdentifier("google_pixel7_pro_new.jpg", "drawable", context.getPackageName())
+            phoneImage?.setImageResource(resourceImage)
 
             phoneNameTextView?.text = phone.name
             priceTextView?.text = phone.getFormatterPrice().toString()
