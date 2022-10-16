@@ -1,6 +1,7 @@
 package com.centennial.jovichenmcintyre_mapd711_001_assignment2
 
 import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -33,7 +34,11 @@ class ListOfPhonesActivity : AppCompatActivity() {
         var listView = findViewById<ListView>(R.id.list)
 
         var listAdaptor = PhoneListAdaptor(this, listOfPhones)
-
+        listView.setOnItemClickListener { parent, view, position, id ->
+            var newIntent = Intent(this,PhoneOptionsSelectActivity::class.java)
+            newIntent.putExtra("phone", Gson().toJson(listOfPhones[position]))
+            startActivity(newIntent)
+        }
         listView.adapter = listAdaptor
 
 
@@ -90,16 +95,16 @@ class ListOfPhonesActivity : AppCompatActivity() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
             var inflatedView:View? = convertView
-            var phone = list[position]
+            val phone = list[position]
 
             if(inflatedView == null){
                 inflatedView = LayoutInflater.from(context).
                 inflate(R.layout.phone_list_item, parent, false)
             }
 
-            var priceTextView = inflatedView?.findViewById<TextView>(R.id.phone_price)
-            var phoneImage = inflatedView?.findViewById<ImageView>(R.id.phone_image)
-            var phoneNameTextView = inflatedView?.findViewById<TextView>(R.id.phone_name)
+            val priceTextView = inflatedView?.findViewById<TextView>(R.id.phone_price)
+            val phoneImage = inflatedView?.findViewById<ImageView>(R.id.phone_image)
+            val phoneNameTextView = inflatedView?.findViewById<TextView>(R.id.phone_name)
 
             val resourceImage: Int = context.resources.getIdentifier(phone.uri, "drawable", context.packageName)
             phoneImage?.setImageResource(resourceImage)

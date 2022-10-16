@@ -1,18 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginLeft="@dimen/page_margins"
+    android:layout_marginRight="@dimen/page_margins"
     tools:context=".PhoneOptionsSelectActivity">
+
+    <ImageView
+        android:id="@+id/phone_image"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginTop="@dimen/page_margins"
+        android:layout_marginBottom="@dimen/bottom_margin_instruction"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/apple_iphone_12_pro_max" />
+
+
+    <TextView
+        android:id="@+id/phone_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        android:text="" />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_color"
+        android:layout_marginBottom="@dimen/bottom_margin_instruction"
+        style="@style/instruction_text_stlye" />
 
     <Spinner
         android:id="@+id/color_spinner"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:backgroundTint="@color/black"
         android:prompt="@string/select_a_color"
         />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/instruction_text_stlye"
+        android:layout_marginBottom="@dimen/bottom_margin_instruction"
+        android:text="@string/choose_internal_storage" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -35,11 +76,14 @@
             android:layout_height="wrap_content"
             android:onClick="onSelectRadioButton"
             android:text="@string/_256_gb" />
-        <RadioButton
-            android:id="@+id/opt_512GB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onSelectRadioButton"
-            android:text="@string/_512_gb" />
+
     </RadioGroup>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSubmit"
+        android:layout_marginTop="20dp"
+        android:text="@string/checkout" />
 </LinearLayout>
+</ScrollView>
