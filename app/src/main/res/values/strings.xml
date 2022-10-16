@@ -17,6 +17,7 @@
     <string name="_128_gb">128 GB</string>
     <string name="_256_gb">256 GB</string>
     <string name="_512_gb">512 GB</string>
+    <string name="come_for_the_phones_stay_for_the_price">Come for the phones, stay for the price</string>
     <string-array name="string_of_phone_colors">
         <item>Blue</item>
         <item>Black</item>
