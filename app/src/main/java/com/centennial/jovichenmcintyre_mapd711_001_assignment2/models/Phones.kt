@@ -1,17 +1,22 @@
 package com.centennial.jovichenmcintyre_mapd711_001_assignment2.models
 
+import java.text.NumberFormat
+import java.util.*
+
 class Phone(
     name: String,
     price: Double,
-    uri: String
+    uri: String,
+    company: String
 ) {
 
     var name:String = name
     private var price:Double = price
     var uri:String = uri
+    var company:String = company
 
-    fun getFormatterPrice():Double{
-        return this.price
+    fun getFormatterPrice(): String {
+        return "$"+NumberFormat.getNumberInstance(Locale.US).format(price);
     }
 
 }
