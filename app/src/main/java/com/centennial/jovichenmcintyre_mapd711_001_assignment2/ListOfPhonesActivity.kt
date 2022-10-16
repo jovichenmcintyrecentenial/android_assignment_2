@@ -13,6 +13,7 @@ import android.widget.ListView
 import android.widget.TextView
 import com.centennial.jovichenmcintyre_mapd711_001_assignment2.enumerators.PhoneCompany
 import com.centennial.jovichenmcintyre_mapd711_001_assignment2.models.Phone
+import com.centennial.jovichenmcintyre_mapd711_001_assignment2.models.PhoneCheckOut
 import com.google.gson.Gson
 import java.util.*
 
@@ -36,7 +37,7 @@ class ListOfPhonesActivity : AppCompatActivity() {
         var listAdaptor = PhoneListAdaptor(this, listOfPhones)
         listView.setOnItemClickListener { parent, view, position, id ->
             var newIntent = Intent(this,PhoneOptionsSelectActivity::class.java)
-            newIntent.putExtra("phone", Gson().toJson(listOfPhones[position]))
+            newIntent.putExtra("checkout", Gson().toJson(PhoneCheckOut(listOfPhones[position])))
             startActivity(newIntent)
         }
         listView.adapter = listAdaptor

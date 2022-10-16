@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.centennial.jovichenmcintyre_mapd711_001_assignment2.models.Phone
+import com.centennial.jovichenmcintyre_mapd711_001_assignment2.models.PhoneCheckOut
 import com.google.gson.Gson
 
 class PhoneOptionsSelectActivity : AppCompatActivity() {
 
     lateinit var selectInternalStorage:String
     lateinit var  selectColorPhone:String
+    lateinit var  checkoutObj:PhoneCheckOut
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +22,7 @@ class PhoneOptionsSelectActivity : AppCompatActivity() {
         selectInternalStorage = resources.getString(R.string._64_gb)
         selectColorPhone = resources.getStringArray(R.array.string_of_phone_colors)[0]
 
-        var selectedPhone = Gson().fromJson(intent.getStringExtra("phone"),Phone::class.java)
+        checkoutObj = Gson().fromJson(intent.getStringExtra("checkout"),PhoneCheckOut::class.java)
         var phoneImageView = findViewById<ImageView>(R.id.phone_image)
         var phoneNameTextView = findViewById<TextView>(R.id.phone_name)
 
@@ -50,8 +52,8 @@ class PhoneOptionsSelectActivity : AppCompatActivity() {
         }
 
 
-        phoneNameTextView.text = selectedPhone.name
-        val resourceImage: Int = resources.getIdentifier(selectedPhone.uri, "drawable", packageName)
+        phoneNameTextView.text = checkoutObj.phone.name
+        val resourceImage: Int = resources.getIdentifier(checkoutObj.phone.uri, "drawable", packageName)
         phoneImageView?.setImageResource(resourceImage)
 
     }
@@ -70,7 +72,9 @@ class PhoneOptionsSelectActivity : AppCompatActivity() {
     }
     fun onSubmit(view: View) {
         var newIntent = Intent(this,CheckOutActivity::class.java )
-        newIntent.putExtra("phone",intent.getStringExtra("phone"))
-        newIntent.putExtra("phone",intent.getStringExtra("phone"))
+        checkoutObj.color = selectColorPhone
+        checkoutObj.internalStorageSize = selectInternalStorage
+        newIntent.putExtra("checkout",Gson().toJson(checkoutObj))
+        startActivity(newIntent)
     }
 }
