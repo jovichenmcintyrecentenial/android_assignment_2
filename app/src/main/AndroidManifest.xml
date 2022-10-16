@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JoviChenMcintyre_MAPD711001_Assignment2">
         <activity
+            android:name=".PhoneOptionsSelectActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListOfPhonesActivity"
             android:exported="false" />
         <activity

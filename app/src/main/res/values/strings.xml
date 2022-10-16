@@ -12,4 +12,16 @@
     <string name="iphone_14_pro_max">iPhone 14 Pro Max</string>
     <string name="iphone_13_pro_max">iPhone 13 Pro Max</string>
     <string name="iphone_12_pro_max">iPhone 12 Pro Max</string>
+    <string name="select_a_color">Select a color</string>
+    <string name="_64_gb">64 GB</string>
+    <string name="_128_gb">128 GB</string>
+    <string name="_256_gb">256 GB</string>
+    <string name="_512_gb">512 GB</string>
+    <string-array name="string_of_phone_colors">
+        <item>Blue</item>
+        <item>Black</item>
+        <item>Silver</item>
+        <item>Gold</item>
+        <item>Red</item>
+    </string-array>
 </resources>

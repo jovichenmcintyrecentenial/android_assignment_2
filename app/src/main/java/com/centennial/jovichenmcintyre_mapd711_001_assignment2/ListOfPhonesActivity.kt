@@ -1,10 +1,6 @@
 package com.centennial.jovichenmcintyre_mapd711_001_assignment2
 
 import android.app.Activity
-import android.content.Context
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater

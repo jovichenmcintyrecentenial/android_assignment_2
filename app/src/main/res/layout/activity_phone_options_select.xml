@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PhoneOptionsSelectActivity">
+
+    <Spinner
+        android:id="@+id/color_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:prompt="@string/select_a_color"
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <RadioButton
+            android:id="@+id/opt_64GB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSelectRadioButton"
+            android:text="@string/_64_gb" />
+        <RadioButton
+            android:id="@+id/opt_128GB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSelectRadioButton"
+            android:text="@string/_128_gb" />
+        <RadioButton
+            android:id="@+id/opt_256GB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSelectRadioButton"
+            android:text="@string/_256_gb" />
+        <RadioButton
+            android:id="@+id/opt_512GB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSelectRadioButton"
+            android:text="@string/_512_gb" />
+    </RadioGroup>
+</LinearLayout>
