@@ -5,4 +5,18 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="checkout_text_view_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/main_text_color</item>
+        <item name="android:textSize">@dimen/labelTextSize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="edit_text_check_out">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ems">10</item>
+    </style>
 </resources>

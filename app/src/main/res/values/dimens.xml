@@ -2,4 +2,6 @@
 <resources>
     <dimen name="bottom_margin_instruction">20dp</dimen>
     <dimen name="page_margins">50dp</dimen>
+    <dimen name="labelTextSize">19sp</dimen>
+
 </resources>

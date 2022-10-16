@@ -8,4 +8,5 @@
     <color name="aqua_darker">#277D9F</color>
     <color name="purple_dark">#6B53C4</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="main_text_color">#2E2E2E</color>
 </resources>

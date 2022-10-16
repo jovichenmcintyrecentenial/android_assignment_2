@@ -1,9 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CheckOutActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/page_margins"
+        tools:context=".MainActivity">
+
+        <TextView
+            style="@style/checkout_text_view_style"
+            android:text="Card Number" />
+
+        <EditText
+            android:id="@+id/cc_number"
+            style="@style/edit_text_check_out"
+            android:autofillHints=""
+            android:hint="**** **** **** ****"
+            android:inputType="number"
+            android:maxLength="16" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/checkout_text_view_style"
+                    android:text="CVV/CVC" />
+
+                <EditText
+                    android:id="@+id/cvv_number"
+                    style="@style/edit_text_check_out"
+                    android:autofillHints=""
+                    android:hint="***"
+                    android:inputType="number"
+                    android:maxLength="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/checkout_text_view_style"
+                    android:text="Expiry date" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/expiry_month"
+                        style="@style/edit_text_check_out"
+                        android:layout_weight="1"
+                        android:autofillHints=""
+                        android:hint="MM"
+                        android:inputType="number"
+                        android:maxLength="2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/" />
+
+                    <EditText
+                        android:id="@+id/expiry_year"
+                        style="@style/edit_text_check_out"
+                        android:layout_weight="1"
+                        android:autofillHints=""
+                        android:hint="YY"
+                        android:inputType="number"
+                        android:maxLength="2" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/checkout_text_view_style"
+            android:text="Firstname" />
+
+        <EditText
+            android:id="@+id/fname"
+            style="@style/edit_text_check_out"
+            android:autofillHints=""
+            android:hint="Enter your firstname"
+            android:inputType="textPersonName" />
+
+        <TextView
+            style="@style/checkout_text_view_style"
+            android:text="Lastname" />
+        <EditText
+            android:id="@+id/lname"
+            style="@style/edit_text_check_out"
+            android:autofillHints=""
+            android:hint="Enter your lastname"
+            android:inputType="textPersonName" />
+        <TextView
+            style="@style/checkout_text_view_style"
+            android:text="Phone number" />
+
+        <EditText
+            android:id="@+id/phone_number"
+            style="@style/edit_text_check_out"
+            android:autofillHints=""
+            android:hint="Enter your phone number"
+            android:inputType="phone" />
+
+
+        <TextView
+            style="@style/checkout_text_view_style"
+            android:text="Address" />
+
+
+        <EditText
+            android:id="@+id/address"
+            style="@style/edit_text_check_out"
+            android:autofillHints=""
+            android:hint="Enter your address"
+            android:inputType="textPersonName" />
+        <TextView
+            style="@style/checkout_text_view_style"
+            android:text="City" />
+
+        <EditText
+            android:id="@+id/city"
+            style="@style/edit_text_check_out"
+            android:autofillHints=""
+            android:hint="Enter your address"
+            android:inputType="textPersonName" />
+
+        <TextView
+            style="@style/checkout_text_view_style"
+            android:text="PostalCode" />
+
+        <EditText
+            android:id="@+id/postal_code"
+            style="@style/edit_text_check_out"
+            android:autofillHints=""
+            android:hint="Enter your address"
+            android:inputType="textPersonName" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSubmit"
+            android:layout_marginTop="@dimen/bottom_margin_instruction"
+            android:layout_marginBottom="@dimen/bottom_margin_instruction"
+            android:text="Confirm &amp; Pay" />
+    </LinearLayout>
+
+</ScrollView>
