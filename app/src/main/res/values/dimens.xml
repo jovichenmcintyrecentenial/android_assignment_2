@@ -4,5 +4,6 @@
     <dimen name="page_margins">50dp</dimen>
     <dimen name="labelTextSize">17sp</dimen>
     <dimen name="page_margin2">20dp</dimen>
+    <dimen name="image_margin">15dp</dimen>
 
 </resources>

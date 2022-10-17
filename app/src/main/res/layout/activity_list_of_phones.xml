@@ -20,7 +20,7 @@
 
 
     <TextView
-        android:text="Choose handset model"
+        android:text="@string/choose_handset_model"
         style="@style/main_instructions" />
 
     <TextView

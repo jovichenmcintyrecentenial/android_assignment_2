@@ -75,6 +75,7 @@
     <string name="address">Address</string>
     <string name="city">City</string>
     <string name="postal_code">Postal Code</string>
+    <string name="choose_handset_model">Choose handset model</string>
     <string-array name="string_of_phone_colors">
         <item>Blue</item>
         <item>Black</item>
