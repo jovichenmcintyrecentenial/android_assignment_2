@@ -1,5 +1,6 @@
 package com.centennial.jovichenmcintyre_mapd711_001_assignment2.models
-
+//Name: Jovi Chen-Mcintyre
+//ID: 301125059
 import com.centennial.jovichenmcintyre_mapd711_001_assignment2.enumerators.CardType
 import java.util.*
 

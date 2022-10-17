@@ -19,6 +19,7 @@ class PhoneOptionsSelectActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phone_options_select)
+        supportActionBar?.title = getString(R.string.customize)
 
         selectInternalStorage = resources.getString(R.string._64_gb)
         selectColorPhone = resources.getStringArray(R.array.string_of_phone_colors)[0]

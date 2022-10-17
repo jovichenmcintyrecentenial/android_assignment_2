@@ -13,6 +13,7 @@ class ConfirmationCheckOutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirmation_check_out)
 
+        supportActionBar?.title = getString(R.string.order_summary)
 
         val phoneImage = findViewById<ImageView>(R.id.phone_image)
         val companyName = findViewById<TextView>(R.id.company)

@@ -44,6 +44,9 @@ class CheckOutActivity : AppCompatActivity() {
          city = findViewById(R.id.city)
          postalCode = findViewById(R.id.postal_code)
 
+        supportActionBar?.title = getString(R.string.checkout)
+
+
 
 
     }
