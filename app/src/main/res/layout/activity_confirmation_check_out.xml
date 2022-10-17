@@ -3,11 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
 
@@ -19,12 +17,12 @@
 
             <TextView
                 style="@style/main_instructions"
-                android:text="Order successful" />
+                android:text="@string/order_successful" />
 
             <TextView
                 style="@style/sub_instructions"
                 android:layout_marginBottom="@dimen/bottom_margin_instruction"
-                android:text="Here is a summary of your order and delivery details" />
+                android:text="@string/here_is_a_summary_of_your_order_and_delivery_details" />
 
             <ImageView
                 android:id="@+id/phone_image"
@@ -47,7 +45,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:text="Order Summary"
+                        android:text="@string/order_summary"
                         android:textSize="16sp"
                         android:textStyle="normal" />
                 </TableRow>
@@ -56,7 +54,7 @@
 
                     <TextView
                         style="@style/data_label"
-                        android:text="Company" />
+                        android:text="@string/company" />
 
                     <TextView
                         android:id="@+id/company"
@@ -68,20 +66,20 @@
 
                     <TextView
                         style="@style/data_label"
-                        android:text="Model" />
+                        android:text="@string/model" />
 
                     <TextView
                         android:id="@+id/model"
 
                         style="@style/information"
-                        android:text="IPhone 14 Pro Max" />
+                        android:text="@string/iphone_14_pro_max" />
                 </TableRow>
 
                 <TableRow android:layout_marginBottom="5dp">
 
                     <TextView
                         style="@style/data_label"
-                        android:text="Color" />
+                        android:text="@string/color" />
 
                     <TextView
                         android:id="@+id/phone_color"
@@ -94,7 +92,7 @@
 
                     <TextView
                         style="@style/data_label"
-                        android:text="Internal Storage" />
+                        android:text="@string/internal_storage" />
 
                     <TextView
                         android:id="@+id/internal_storage"
@@ -107,7 +105,7 @@
 
                     <TextView
                         style="@style/data_label"
-                        android:text="Card Type" />
+                        android:text="@string/card_type" />
 
                     <TextView
                         android:id="@+id/card_type"
@@ -121,7 +119,7 @@
                     <TextView
                         style="@style/data_label"
 
-                        android:text="Card Last 4 Digits" />
+                        android:text="@string/card_last_4_digits" />
 
                     <TextView
                         android:id="@+id/last_4_digits"
@@ -134,7 +132,7 @@
 
                     <TextView
                         style="@style/data_label"
-                        android:text="Price" />
+                        android:text="@string/price" />
 
                     <TextView
                         android:id="@+id/price"
@@ -159,7 +157,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:text="Delivery Address"
+                        android:text="@string/delivery_address"
                         android:textSize="16sp"
                         android:textStyle="normal" />
                 </TableRow>
@@ -168,7 +166,7 @@
 
                     <TextView
                         style="@style/data_label"
-                        android:text="Name" />
+                        android:text="@string/name" />
 
                     <TextView
                         android:id="@+id/user_name"
@@ -181,7 +179,7 @@
 
                     <TextView
                         style="@style/data_label"
-                        android:text="Address" />
+                        android:text="@string/address" />
 
                     <TextView
                         android:id="@+id/address"
@@ -194,7 +192,7 @@
 
                     <TextView
                         style="@style/data_label"
-                        android:text="City" />
+                        android:text="@string/city" />
 
                     <TextView
                         android:id="@+id/city"
@@ -207,7 +205,7 @@
 
                     <TextView
                         style="@style/data_label"
-                        android:text="Postal Code" />
+                        android:text="@string/postal_code" />
 
                     <TextView
                         android:id="@+id/postal_code"
