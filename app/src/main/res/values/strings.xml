@@ -35,6 +35,10 @@
     <string name="empty_address">Please fill out the address field</string>
     <string name="empty_city">Please fill out the city field</string>
     <string name="empty_postal_code">Please fill out the postal code field</string>
+    <string name="choose_payment_method">Choose payment method</string>
+    <string name="fill_out_the_information_below_to_complete_you_order">Fill out the information below to complete you order</string>
+    <string name="customize_your_device">Customize your device</string>
+    <string name="select_your_phone_specification_by_selecting_options_below">Select your phone specification by selecting options below</string>
     <string-array name="string_of_phone_colors">
         <item>Blue</item>
         <item>Black</item>

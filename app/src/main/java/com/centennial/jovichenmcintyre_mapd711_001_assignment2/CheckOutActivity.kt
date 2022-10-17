@@ -115,6 +115,8 @@ class CheckOutActivity : AppCompatActivity() {
                 checkoutObj.address = address.text.toString()
                 checkoutObj.city = city.text.toString()
                 checkoutObj.postalCode = postalCode.text.toString()
+
+
             }
         }
         //catch  and display user input exception

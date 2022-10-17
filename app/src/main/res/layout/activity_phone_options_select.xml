@@ -7,8 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginLeft="@dimen/page_margins"
-    android:layout_marginRight="@dimen/page_margins"
+    android:layout_marginLeft="@dimen/page_margin2"
+    android:layout_marginRight="@dimen/page_margin2"
     tools:context=".PhoneOptionsSelectActivity">
 
     <ImageView
@@ -29,7 +29,14 @@
         android:textSize="20sp"
         android:layout_marginBottom="20dp"
         android:text="" />
+    <TextView
+        android:text="@string/customize_your_device"
+        style="@style/main_instructions" />
 
+    <TextView
+        android:text="@string/select_your_phone_specification_by_selecting_options_below"
+        android:layout_marginBottom="@dimen/bottom_margin_instruction"
+        style="@style/sub_instructions" />
 
     <TextView
         android:id="@+id/textView4"
