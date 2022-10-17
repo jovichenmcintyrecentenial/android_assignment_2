@@ -1,5 +1,4 @@
 package com.centennial.jovichenmcintyre_mapd711_001_assignment2
-
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 

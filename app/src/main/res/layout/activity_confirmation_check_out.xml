@@ -97,7 +97,7 @@
                         android:text="Internal Storage" />
 
                     <TextView
-                        android:id="@+id/internal_memory"
+                        android:id="@+id/internal_storage"
                         style="@style/information"
 
                         android:text="64 GB" />

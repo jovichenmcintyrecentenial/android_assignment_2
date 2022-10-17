@@ -1,5 +1,6 @@
 package com.centennial.jovichenmcintyre_mapd711_001_assignment2
-
+//Name: Jovi Chen-Mcintyre
+//ID: 301125059
 import org.junit.Test
 
 import org.junit.Assert.*
