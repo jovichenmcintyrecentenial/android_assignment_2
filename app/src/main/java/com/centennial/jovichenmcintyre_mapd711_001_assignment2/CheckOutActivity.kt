@@ -1,5 +1,6 @@
 package com.centennial.jovichenmcintyre_mapd711_001_assignment2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,17 +16,17 @@ import java.util.*
 
 class CheckOutActivity : AppCompatActivity() {
 
-    lateinit var ccNumber: EditText
-    lateinit var  cvvNumber: EditText
-    lateinit var  expiryMonth: EditText
-    lateinit var  expiryYear: EditText
-    lateinit var  fname: EditText
-    lateinit var  lname: EditText
-    lateinit var  phoneNumber: EditText
-    lateinit var  address: EditText
-    lateinit var  city: EditText
-    lateinit var  postalCode: EditText
-    var cardType: CardType? = null
+    private lateinit var ccNumber: EditText
+    private lateinit var  cvvNumber: EditText
+    private lateinit var  expiryMonth: EditText
+    private lateinit var  expiryYear: EditText
+    private lateinit var  fname: EditText
+    private lateinit var  lname: EditText
+    private lateinit var  phoneNumber: EditText
+    private lateinit var  address: EditText
+    private lateinit var  city: EditText
+    private lateinit var  postalCode: EditText
+    var cardType: CardType? = CardType.CREDIT
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -122,6 +123,9 @@ class CheckOutActivity : AppCompatActivity() {
                 checkoutObj.postalCode = postalCode.text.toString()
                 checkoutObj.cardType = cardType
 
+                val newIntent = Intent(this,ConfirmationCheckOutActivity::class.java)
+                newIntent.putExtra("checkout" , Gson().toJson(checkoutObj))
+                startActivity(newIntent)
 
             }
         }
