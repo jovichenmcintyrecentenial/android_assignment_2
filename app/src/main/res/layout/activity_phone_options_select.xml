@@ -45,14 +45,20 @@
         android:text="@string/choose_color"
         android:layout_marginBottom="@dimen/bottom_margin_instruction"
         style="@style/instruction_text_stlye" />
+    <LinearLayout
+        android:background="@drawable/spiner_ui"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
 
+        android:layout_height="wrap_content">
     <Spinner
         android:id="@+id/color_spinner"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:backgroundTint="@color/black"
+
         android:prompt="@string/select_a_color"
         />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView5"
