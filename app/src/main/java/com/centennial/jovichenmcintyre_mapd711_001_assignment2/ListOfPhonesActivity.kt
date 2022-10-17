@@ -22,31 +22,46 @@ class ListOfPhonesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_of_phones)
+
+        //deserialize PhoneCompany enum from intent
         var company:PhoneCompany = Gson().fromJson(intent.getStringExtra("company"), PhoneCompany::class.java)
 
+        //get list of phone based on company
         var listOfPhones = getPhoneList(company)
 
+        //if list not empty update action bar title to company name
         if(listOfPhones.isNotEmpty()) {
             supportActionBar?.title = listOfPhones[0].company
-
+            //find image company image view
             val companyImageView = findViewById<ImageView>(R.id.company_logo)
+            //get company image based on company name
             val resourceImage: Int = resources.getIdentifier(listOfPhones[0].company.lowercase(), "drawable", packageName)
+            //display company logo
             companyImageView?.setImageResource(resourceImage)
         }
+        //find list view
         var listView = findViewById<ListView>(R.id.list)
 
+        //create instance of a custom listAdpator called PhoneListAdaptor
         var listAdaptor = PhoneListAdaptor(this, listOfPhones)
+
+        //create a listener for on click aciton on list view
         listView.setOnItemClickListener { parent, view, position, id ->
             var newIntent = Intent(this,PhoneOptionsSelectActivity::class.java)
+            //update create PhoneCheckOut and serialize data and pass to intent
             newIntent.putExtra("checkout", Gson().toJson(PhoneCheckOut(listOfPhones[position])))
+            //load new Intent
             startActivity(newIntent)
         }
+
+        //attact adaptor to listview
         listView.adapter = listAdaptor
 
 
 
     }
 
+    //function to get a list of phone  based on company names
     private fun getPhoneList(company: PhoneCompany):List<Phone>{
         var list = ArrayList<Phone>()
 
@@ -77,6 +92,7 @@ class ListOfPhonesActivity : AppCompatActivity() {
     }
 
 
+    //custom list adaptor to achieve design
     class PhoneListAdaptor(context: Activity, list:List<Phone>):  BaseAdapter(){
 
         var context = context
@@ -97,21 +113,28 @@ class ListOfPhonesActivity : AppCompatActivity() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
             var inflatedView:View? = convertView
+            //load data at position
             val phone = list[position]
 
+
             if(inflatedView == null){
+                //inflate custom list item layout
                 inflatedView = LayoutInflater.from(context).
                 inflate(R.layout.phone_list_item, parent, false)
             }
 
+            //find views
             val priceTextView = inflatedView?.findViewById<TextView>(R.id.phone_price)
             val phoneImage = inflatedView?.findViewById<ImageView>(R.id.phone_image)
             val phoneNameTextView = inflatedView?.findViewById<TextView>(R.id.phone_name)
 
+            //dynamically load phone images using phone uri
             val resourceImage: Int = context.resources.getIdentifier(phone.uri, "drawable", context.packageName)
             phoneImage?.setImageResource(resourceImage)
 
+            //update phone name in list
             phoneNameTextView?.text = phone.name
+            //update price on list time
             priceTextView?.text = phone.getFormatterPrice().toString()
             return inflatedView!!
         }

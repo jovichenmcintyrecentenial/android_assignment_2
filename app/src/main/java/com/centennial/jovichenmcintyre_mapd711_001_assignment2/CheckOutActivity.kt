@@ -33,6 +33,7 @@ class CheckOutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_out)
+        //find views
         ccNumber = findViewById(R.id.cc_number)
          cvvNumber = findViewById(R.id.cvv_number)
          expiryMonth = findViewById(R.id.expiry_month)
@@ -44,6 +45,7 @@ class CheckOutActivity : AppCompatActivity() {
          city = findViewById(R.id.city)
          postalCode = findViewById(R.id.postal_code)
 
+        //update title
         supportActionBar?.title = getString(R.string.checkout)
 
 
@@ -66,9 +68,10 @@ class CheckOutActivity : AppCompatActivity() {
         else if(cvvNumber.text.trim().length != 3){
             throw UserInputException(getString(R.string.error_3_digit_cvv))
         }
-        if(expiryMonth.text.trim().isEmpty()){
+        if(expiryMonth.text.trim().isEmpty()) {
             throw UserInputException(getString(R.string.empty_exp_month))
         }
+        //check if user enter 13th or more month
         else if(expiryMonth.text.toString().toDouble() > 12){
             throw UserInputException(getString(R.string.error_12_month_in_year))
         }
@@ -76,6 +79,7 @@ class CheckOutActivity : AppCompatActivity() {
             throw UserInputException(getString(R.string.empty_exp_year))
         }
         else {
+            //check if year enter has passed
             var year = Calendar.getInstance().get(Calendar.YEAR).toString()
             year = year.substring(2,year.length)
             val yearInput = expiryYear.text.toString()
@@ -114,6 +118,7 @@ class CheckOutActivity : AppCompatActivity() {
     fun onSubmit(view: View) {
         try{
             if(isDataValid()){
+                //get checkout object from intent and update data on object
                 var checkoutObj = Gson().fromJson(intent.getStringExtra("checkout"),PhoneCheckOut::class.java)
                 checkoutObj.cardNumber = ccNumber.text.toString()
                 checkoutObj.cvv = cvvNumber.text.toString()
@@ -127,7 +132,10 @@ class CheckOutActivity : AppCompatActivity() {
                 checkoutObj.postalCode = postalCode.text.toString()
                 checkoutObj.cardType = cardType
 
+
+
                 val newIntent = Intent(this,ConfirmationCheckOutActivity::class.java)
+                //serial checkout object save to intent
                 newIntent.putExtra("checkout" , Gson().toJson(checkoutObj))
                 startActivity(newIntent)
 

@@ -13,8 +13,10 @@ class ConfirmationCheckOutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirmation_check_out)
 
+        //update title
         supportActionBar?.title = getString(R.string.order_summary)
 
+        //find and store views
         val phoneImage = findViewById<ImageView>(R.id.phone_image)
         val companyName = findViewById<TextView>(R.id.company)
         val modelName = findViewById<TextView>(R.id.model)
@@ -28,20 +30,24 @@ class ConfirmationCheckOutActivity : AppCompatActivity() {
         val address = findViewById<TextView>(R.id.address)
         val city = findViewById<TextView>(R.id.city)
         val postalCode = findViewById<TextView>(R.id.postal_code)
-        
+
+        //deserialize data from intent
         val checkoutObj = Gson().fromJson(intent.getStringExtra("checkout"),PhoneCheckOut::class.java)
 
+        //display phone image
         val resourceImage: Int = resources.getIdentifier(checkoutObj.phone.uri, "drawable", packageName)
         phoneImage?.setImageResource(resourceImage)
 
+        //populate views
         companyName.text = checkoutObj.phone.company
         modelName.text = checkoutObj.phone.name
         phoneColor.text = checkoutObj.color
         internalStorage.text = checkoutObj.internalStorageSize
         cardType.text = checkoutObj.cardType.toString()
+        //show last 4 digits
         last4Digits.text = checkoutObj.cardNumber?.substring(12)
         price.text = checkoutObj.phone.getFormatterPrice()
-
+        //populate views
         userName.text = checkoutObj.firstName+" "+checkoutObj.lastName
         address.text = checkoutObj.address
         city.text = checkoutObj.city

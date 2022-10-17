@@ -17,12 +17,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        //load menu
         menuInflater.inflate(R.menu.menu,menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
+        //create new intent to ListOfPhonesActivity
         var newIntent = Intent(this, ListOfPhonesActivity::class.java)
         var selectedCompany:PhoneCompany? = null
 
@@ -34,7 +35,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (selectedCompany != null) {
+            //serialize and update intent to store company selected
             newIntent.putExtra("company", Gson().toJson(selectedCompany))
+            //load intent
             startActivity(newIntent)
 
         }
