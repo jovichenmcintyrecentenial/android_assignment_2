@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.RadioButton
 import android.widget.Toast
+import com.centennial.jovichenmcintyre_mapd711_001_assignment2.enumerators.CardType
 import com.centennial.jovichenmcintyre_mapd711_001_assignment2.exceptions.UserInputException
 import com.centennial.jovichenmcintyre_mapd711_001_assignment2.models.PhoneCheckOut
 import com.google.gson.Gson
@@ -23,6 +25,7 @@ class CheckOutActivity : AppCompatActivity() {
     lateinit var  address: EditText
     lateinit var  city: EditText
     lateinit var  postalCode: EditText
+    var cardType: CardType? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +41,8 @@ class CheckOutActivity : AppCompatActivity() {
          address = findViewById(R.id.address)
          city = findViewById(R.id.city)
          postalCode = findViewById(R.id.postal_code)
+
+
 
     }
 
@@ -115,6 +120,7 @@ class CheckOutActivity : AppCompatActivity() {
                 checkoutObj.address = address.text.toString()
                 checkoutObj.city = city.text.toString()
                 checkoutObj.postalCode = postalCode.text.toString()
+                checkoutObj.cardType = cardType
 
 
             }
@@ -124,5 +130,16 @@ class CheckOutActivity : AppCompatActivity() {
             //display exception message
             showMessage(e.message.toString())
         }
+    }
+
+    fun onSelectRadioButton(view: View) {
+
+        if(view is RadioButton){
+            when(view.id){
+                R.id.credit->cardType = CardType.CREDIT
+                R.id.debit -> cardType = CardType.DEBIT
+            }
+        }
+
     }
 }

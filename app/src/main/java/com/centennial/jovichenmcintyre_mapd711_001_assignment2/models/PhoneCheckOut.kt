@@ -1,8 +1,10 @@
 package com.centennial.jovichenmcintyre_mapd711_001_assignment2.models
 
+import com.centennial.jovichenmcintyre_mapd711_001_assignment2.enumerators.CardType
 import java.util.*
 
 class PhoneCheckOut (phone:Phone) {
+    var cardType: CardType? = null
     var phone = phone
     var color:String? = null
     var cardNumber:String? = null

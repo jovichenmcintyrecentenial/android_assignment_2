@@ -24,6 +24,29 @@
             android:layout_marginBottom="@dimen/bottom_margin_instruction"
             style="@style/sub_instructions" />
 
+        <TextView
+            style="@style/checkout_text_view_style"
+            android:text="Card Type" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/credit"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onSelectRadioButton"
+                android:text="Credit" />
+            <RadioButton
+                android:layout_weight="1"
+                android:id="@+id/debit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onSelectRadioButton"
+                android:text="Debit" />
+        </RadioGroup>
 
         <TextView
             style="@style/checkout_text_view_style"
