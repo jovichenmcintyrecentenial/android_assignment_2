@@ -41,6 +41,29 @@
     <string name="select_your_phone_specification_by_selecting_options_below">Select your phone specification by selecting options below</string>
     <string name="customize">Customize</string>
     <string name="order_summary">Order Summary</string>
+    <string name="card_type">Card Type</string>
+    <string name="credit">Credit</string>
+    <string name="debit">Debit</string>
+    <string name="card_number">Card Number</string>
+    <string name="cc_placeholder">**** **** **** ****</string>
+    <string name="cvv_cvc">CVV/CVC</string>
+    <string name="cvv_place_holder">***</string>
+    <string name="expiry_date">Expiry date</string>
+    <string name="mm">MM</string>
+    <string name="yy">YY</string>
+    <string name="firstname">Firstname</string>
+    <string name="enter_your_firstname">Enter your firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="enter_your_lastname">Enter your lastname</string>
+    <string name="phone_number">Phone number</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="postalcode">Postal Code</string>
+    <string name="enter_your_address">Enter your address</string>
+    <string name="enter_your_city">Enter your city</string>
+    <string name="enter_your_postal_code">Enter your postal code</string>
+    <string name="confirm_amp_pay"><![CDATA[Confirm & Pay]]></string>
     <string-array name="string_of_phone_colors">
         <item>Blue</item>
         <item>Black</item>
